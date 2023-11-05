@@ -1,4 +1,9 @@
+.venv_jup
+
+src/.rasa
+src/data/cos_sim.pkl
 src/data/vgsales.csv
+
 .obsidian
 *.sw*
 *.pyc

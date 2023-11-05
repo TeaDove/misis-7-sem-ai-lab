@@ -1,20 +1,17 @@
 PYTHON ?= .venv/bin/python
-
-download: 
-	cd data && ./get_data.sh 
-
-download-quick:
-	cd data && ./get_data_quick.sh 
+PYTHON_JUP ?= .venv_jup/bin/python
+PYTHON_PRE ?= ../.venv/bin/python
 
 install:
 	python3.10 -m venv .venv
-	. .venv/bin/activate
-	$(PYTHON) -m pip install -r ./src/requirements.txt
+	$(PYTHON) -m pip install poetry
+	poetry update
+
+	python3.10 -m venv .venv_jup
+	$(PYTHON_JUP) -m pip install -r src/jup-requirements.txt
 
 jup:
-	. .venv/bin/activate
-	$(PYTHON) -m jupyterlab
+	$(PYTHON_JUP) -m jupyterlab
 
 jup-darwin:
-	. .venv/bin/activate
-	$(PYTHON) -m jupyterlab --app-dir=/opt/homebrew/share/jupyter/lab
+	$(PYTHON_JUP) -m jupyterlab --app-dir=/opt/homebrew/share/jupyter/lab
