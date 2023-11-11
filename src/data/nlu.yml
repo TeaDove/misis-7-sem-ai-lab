@@ -1,5 +1,13 @@
 version: "3.1"
 nlu:
+- intent: get_closest_to
+  examples: |
+    - Подскажи игру, похожую на [Call of Duty](target_name)
+    - Подскажи игры, похожие на [Call of Duty](target_name)
+    - Какие есть игры, похожые на [Call of Duty](target_name)
+    - Что похоже на [Call of Duty](target_name)
+    - [Call of Duty](target_name)
+
 - intent: greet
   examples: |
     - Привет

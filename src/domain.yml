@@ -2,12 +2,23 @@ version: "3.1"
 intents:
   - greet
   - goodbye
+  - get_closest_to
 
-entities: []
+entities:
+  - target_name
 
-slots: {}
+slots:                          
+  target_name:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: target_name
 
-actions: []
+
+actions:
+  - action_get_closest_to
+
 responses:
   utter_greet:
   - text: "Привет!\nЧем я могу помочь?"
@@ -15,3 +26,5 @@ responses:
   utter_goodbye:
   - text: "До свидания.\nХорошего дня!"
   
+  utter_default:
+  - text: "Извините, я не могу понять ваш запрос. Пожалуйста, переформулируйте вопрос"

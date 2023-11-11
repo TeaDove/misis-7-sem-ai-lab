@@ -8,11 +8,12 @@ predict = Predict()
 
 class ActionClosestTo(Action):
     def name(self) -> Text:
-        return "action_closest_to"
+        return "action_get_closest_to"
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: dict[Text, Any]) -> list[dict[Text, Any]]:
         target_name = tracker.get_slot("target_name")
-        count = tracker.get_slot("count")
+        # count = tracker.get_slot("count")
+        count = 5
 
         if not isinstance(target_name, str):
             dispatcher.utter_message("Неправильный формат:(")

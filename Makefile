@@ -15,3 +15,12 @@ jup:
 
 jup-darwin:
 	$(PYTHON_JUP) -m jupyterlab --app-dir=/opt/homebrew/share/jupyter/lab
+
+train:
+	cd src && $(PYTHON_PRE) -m rasa train
+
+run: 
+	cd src && $(PYTHON_PRE) -m rasa run
+
+shell: 
+	cd src && $(PYTHON_PRE) -m rasa shell
