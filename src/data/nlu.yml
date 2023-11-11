@@ -3,10 +3,10 @@ nlu:
 - intent: get_closest_to
   examples: |
     - Подскажи игру, похожую на [Call of Duty](target_name)
-    - Подскажи игры, похожие на [Call of Duty](target_name)
-    - Какие есть игры, похожые на [Call of Duty](target_name)
-    - Что похоже на [Call of Duty](target_name)
-    - [Call of Duty](target_name)
+    - Подскажи игры, похожие на [Need for speed](target_name)
+    - Какие есть игры, похожые на [Mario odessy](target_name)
+    - Что похоже на [Battlefield Bad Company 2](target_name)
+    - [Mario Galaxy](target_name)
 
 - intent: greet
   examples: |

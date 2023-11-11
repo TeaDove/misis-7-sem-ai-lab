@@ -2,6 +2,7 @@
 
 src/.rasa
 src/data/cos_sim.pkl
+src/data/knn.pkl
 src/data/vgsales.csv
 src/models 
 

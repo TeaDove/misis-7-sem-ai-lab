@@ -8,9 +8,6 @@ def predict() -> Predict:
 
 
 class TestPredict:
-    def test_load_cos_sim_ok(self, predict: Predict):
-        predict.load_cos_sim()
-
     def test_find_name_ok(self, predict: Predict):
         assert "Call of Duty 3" == predict.find_name("Call of Duty")
 
@@ -24,7 +21,8 @@ class TestPredict:
         } == set(predict.find_names("Need for speed", count=5))
 
     def test_recomend_cos_ok(self, predict: Predict):
-        print(list(predict.recomend_cos("Call of Duty: Black Ops", top=3)))
+        predict.recommend("Need for Speed Carbon", count=5)
+        predict.recommend("Call of Duty: Black Ops", count=5)
 
     def test_best_from_pablisher_ok(self, predict: Predict):
         assert {"Call of Duty: Modern Warfare 3", "Call of Duty: Black Ops"} == set(
