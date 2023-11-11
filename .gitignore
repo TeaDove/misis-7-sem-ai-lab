@@ -3,6 +3,7 @@
 src/.rasa
 src/data/cos_sim.pkl
 src/data/vgsales.csv
+src/models 
 
 .obsidian
 *.sw*
