@@ -1,5 +1,5 @@
 import pytest
-from actions.predict import Predict
+from actions.predict import Predict, Algoritms
 
 
 @pytest.fixture(scope="class")
@@ -21,6 +21,12 @@ class TestPredict:
         } == set(predict.find_names("Need for speed", count=5))
 
     def test_recomend_cos_ok(self, predict: Predict):
+        predict.algoritm = Algoritms.COS_SIM
+        predict.recommend("Need for Speed Carbon", count=5)
+        predict.recommend("Call of Duty: Black Ops", count=5)
+
+    def test_recomend_knn_ok(self, predict: Predict):
+        predict.algoritm = Algoritms.KNN
         predict.recommend("Need for Speed Carbon", count=5)
         predict.recommend("Call of Duty: Black Ops", count=5)
 

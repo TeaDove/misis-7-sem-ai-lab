@@ -81,7 +81,7 @@ class Predict:
         result = list(result)
 
         logger.debug(
-            "recommendation done: target_name: {}, count: {}, algoritm: {}, result: {}",
+            "recommendation done: target_name: {}, count: {}, algoritm: {}\nresult: {}",
             target_name,
             count,
             self.algoritm,

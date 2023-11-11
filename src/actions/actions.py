@@ -29,9 +29,9 @@ class ActionClosestTo(Action):
             dispatcher.utter_message("Такую игру я не знаю:(")
             return []
 
-        predictions = list(predict.recomend(found_name, top=count))
+        predictions = list(predict.recommend(found_name, count=count))
 
-        message = "Похожие игры:\n"
+        message = f"Я знаю игру {found_name}, вам обязательно понравятся такие игры как:\n\n"
         for prediction in predictions:
             message += f"{prediction.v}\n"
         dispatcher.utter_message(message)
