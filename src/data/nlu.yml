@@ -8,6 +8,22 @@ nlu:
     - Что похоже на [Battlefield Bad Company 2](target_name)
     - [Mario Galaxy](target_name)
 
+- intent: get_best_from_publisher
+  examples: |
+    - Какие есть самые лучшие игры от издателя [Activision](target_name)
+    - Что есть от издателя [Blizzard](target_name)
+
+- intent: get_best_from_genre
+  examples: |
+    - Какие есть самые лучшие игры по жарну [Shooter](target_name)
+    - Что есть по жарну [Adventure](target_name)
+
+
+- intent: get_best_from_platform
+  examples: |
+    - Какие есть самые лучшие игры на платформу [PC](target_name)
+    - Что есть на [XBOX](target_name)
+
 - intent: greet
   examples: |
     - Привет

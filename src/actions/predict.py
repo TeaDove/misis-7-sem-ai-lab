@@ -96,7 +96,10 @@ class Predict:
         return names
 
     def best_from(self, count: int, field: str, name: str) -> list[str]:
-        return list(self.df[self.df[field] == name].sort_values(by="Global_Sales", ascending=False).Name[:count])
+        best = list(self.df[self.df[field] == name].sort_values(by="Global_Sales", ascending=False).Name[:count])
+
+        logger.debug("found best from: field: {}, name: {}, best: {}", field, name, best)
+        return best
 
     def find_name(self, name: str) -> str:
         found_names = self.find_names(name, count=1)

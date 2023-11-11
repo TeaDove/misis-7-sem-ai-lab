@@ -4,3 +4,19 @@ stories:
     steps:
     - intent: get_closest_to
     - action: action_get_closest_to
+  
+  - story: BestFromPublisher
+    steps:
+    - intent: get_best_from_publisher
+    - action: action_get_best_from_publisher
+  
+  - story: BestFromGenre
+    steps:
+    - intent: get_best_from_genre
+    - action: action_get_best_from_genre
+
+  - story: BestFromPlatform
+    steps:
+    - intent: get_best_from_platform
+    - action: action_get_best_from_platform
+    

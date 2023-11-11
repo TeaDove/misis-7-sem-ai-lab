@@ -3,6 +3,9 @@ intents:
   - greet
   - goodbye
   - get_closest_to
+  - get_best_from_publisher
+  - get_best_from_genre
+  - get_best_from_platform
 
 entities:
   - target_name
@@ -18,6 +21,9 @@ slots:
 
 actions:
   - action_get_closest_to
+  - action_get_best_from_platform
+  - action_get_best_from_genre
+  - action_get_best_from_publisher
 
 responses:
   utter_greet:

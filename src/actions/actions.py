@@ -37,3 +37,51 @@ class ActionClosestTo(Action):
         dispatcher.utter_message(message)
 
         return []
+
+
+class ActionBestFromPublisher(Action):
+    def name(self) -> Text:
+        return "action_get_best_from_publisher"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: dict[Text, Any]) -> list[dict[Text, Any]]:
+        target_name = str(tracker.get_slot("target_name"))
+        field_name = "Publisher"
+        # count = tracker.get_slot("count")
+        count = 5
+
+        predictions = "\n".join(predict.best_from(count=count, field=field_name, name=target_name))
+        dispatcher.utter_message(f"Самые лучшие игры по данным параметрам: \n\n{predictions}")
+
+        return []
+
+
+class ActionBestFromGenre(Action):
+    def name(self) -> Text:
+        return "action_get_best_from_genre"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: dict[Text, Any]) -> list[dict[Text, Any]]:
+        target_name = str(tracker.get_slot("target_name"))
+        field_name = "Genre"
+        # count = tracker.get_slot("count")
+        count = 5
+
+        predictions = "\n".join(predict.best_from(count=count, field=field_name, name=target_name))
+        dispatcher.utter_message(f"Самые лучшие игры по данным параметрам: \n\n{predictions}")
+
+        return []
+
+
+class ActionBestFromPlatform(Action):
+    def name(self) -> Text:
+        return "action_get_best_from_platform"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: dict[Text, Any]) -> list[dict[Text, Any]]:
+        target_name = str(tracker.get_slot("target_name"))
+        field_name = "Platform"
+        # count = tracker.get_slot("count")
+        count = 5
+
+        predictions = "\n".join(predict.best_from(count=count, field=field_name, name=target_name))
+        dispatcher.utter_message(f"Самые лучшие игры по данным параметрам: \n\n{predictions}")
+
+        return []
