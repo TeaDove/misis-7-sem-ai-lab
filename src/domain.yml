@@ -1,36 +1,37 @@
-version: "3.1"
+version: '3.1'
 intents:
-  - greet
-  - goodbye
-  - get_closest_to
-  - get_best_from_publisher
-  - get_best_from_genre
-  - get_best_from_platform
-
+- get_best_from_genre
+- get_best_from_platform
+- get_best_from_publisher
+- get_closest_to
+- goodbye
+- greet
 entities:
-  - target_name
-
-slots:                          
+- target_name
+slots:
   target_name:
     type: text
     influence_conversation: false
     mappings:
-      - type: from_entity
-        entity: target_name
-
-
+    - type: from_entity
+      entity: target_name
 actions:
-  - action_get_closest_to
-  - action_get_best_from_platform
-  - action_get_best_from_genre
-  - action_get_best_from_publisher
-
+- utter_greet
+- action_get_closest_to
+- action_get_best_from_platform
+- action_get_best_from_genre
+- action_get_best_from_publisher
 responses:
   utter_greet:
-  - text: "Привет!\nЧем я могу помочь?"
-  
+  - text: |-
+      Привет!
+      Чем я могу помочь?
   utter_goodbye:
-  - text: "До свидания.\nХорошего дня!"
-  
+  - text: |-
+      До свидания.
+      Хорошего дня!
   utter_default:
-  - text: "Извините, я не могу понять ваш запрос. Пожалуйста, переформулируйте вопрос"
+  - text: Извините, я не могу понять ваш запрос. Пожалуйста, переформулируйте вопрос
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

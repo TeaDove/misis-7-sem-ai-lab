@@ -4,26 +4,29 @@ nlu:
   examples: |
     - Подскажи игру, похожую на [Call of Duty](target_name)
     - Подскажи игры, похожие на [Need for speed](target_name)
-    - Какие есть игры, похожые на [Mario odessy](target_name)
+    - Игры, похожие на [Need for speed](target_name)
+    - Какие есть игры, похожие на [Mario odessy](target_name)
+    - Какие есть игры, как [Mario odessy](target_name)
     - Что похоже на [Battlefield Bad Company 2](target_name)
     - [Mario Galaxy](target_name)
-
 - intent: get_best_from_publisher
   examples: |
     - Какие есть самые лучшие игры от издателя [Activision](target_name)
     - Что есть от издателя [Blizzard](target_name)
-
+    - Игры от издателя [Blizzard](target_name)
+    - Издатель [Blizzard](target_name)
 - intent: get_best_from_genre
   examples: |
     - Какие есть самые лучшие игры по жарну [Shooter](target_name)
     - Что есть по жарну [Adventure](target_name)
-
-
+    - Игры по жанру [Adventure](target_name)
+    - Жанр [Adventure](target_name)
 - intent: get_best_from_platform
   examples: |
     - Какие есть самые лучшие игры на платформу [PC](target_name)
     - Что есть на [XBOX](target_name)
-
+    - Игры на [PC](target_name)
+    - Платформа [PC](target_name)
 - intent: greet
   examples: |
     - Привет
@@ -33,7 +36,7 @@ nlu:
     - Добрый вечер
     - Доброе утро
     - Доброй ночи
-
+    - Как дела?
 - intent: goodbye
   examples: |
     - Пока

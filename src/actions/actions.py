@@ -1,9 +1,7 @@
 from typing import Any, Text
-from numpy import real
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from actions.predict import Predict
-from loguru import logger
 
 predict = Predict()
 
