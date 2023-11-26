@@ -89,9 +89,11 @@ class Predict:
         )
         return result
 
-    def find_names(self, name: str, count: int = 5) -> list[str]:
-        names = get_close_matches(name, self._names, n=count)
+    def find_names(self, name: str, count: int) -> list[str]:
+        names = get_close_matches(name, self._names, n=count * 3)
+        rows = self.df[self.df["Name"].isin(names)].sort_values("Global_Sales", ascending=False)["Name"].unique()
 
+        names = list(rows)[:count]
         logger.debug("names found: name: {}, count: {}, found_names: {}", name, count, names)
         return names
 

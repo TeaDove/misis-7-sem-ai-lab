@@ -9,15 +9,17 @@ def predict() -> Predict:
 
 class TestPredict:
     def test_find_name_ok(self, predict: Predict):
-        assert "Call of Duty 3" == predict.find_name("Call of Duty")
+        assert "Call of Duty: Ghosts" == predict.find_name("Call of Duty")
 
     def test_find_names_ok(self, predict: Predict):
+        print(predict.find_names("Need for speed", count=5))
+
         assert {
+            "Need for Speed Underground",
+            "Need for Speed Underground 2",
+            "Need for Speed: Most Wanted",
+            "Need for Speed: Hot Pursuit",
             "Need for Speed: Shift",
-            "Need for Speed: Nitro",
-            "Need for Speed Rivals",
-            "Need for Speed Carbon",
-            "Need for Speed (2015)",
         } == set(predict.find_names("Need for speed", count=5))
 
     def test_recomend_cos_ok(self, predict: Predict):
